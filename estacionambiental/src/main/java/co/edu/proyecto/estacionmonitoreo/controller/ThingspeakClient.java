@@ -13,7 +13,7 @@ import com.google.gson.JsonParser;
  * Cliente para obtener lecturas desde ThingSpeak usando Gson.
  * Lee el último valor disponible de un canal y campo específico.
  */
-public class ThingSpeakClient {
+public class ThingspeakClient {
 
     // URL base con tu canal y API Key de lectura
     private static final String READ_API_URL_TEMPLATE =
