@@ -45,25 +45,38 @@ public class EcoMonitorSystem {
         System.out.println("✅ Sistema EcoMonitor listo para operación");
     }
 
-    private void setupDefaultSensors() {
-        System.out.println("🔧 Configurando sensores por defecto...");
-
-        addSensor(1, "TEMPERATURE", 18.0f, 26.0f);    // Temperatura confort (°C)
-        addSensor(2, "HUMIDITY", 40.0f, 60.0f);       // Humedad confort (%)
-        addSensor(3, "CO2", 400.0f, 800.0f);          // CO2 interior (ppm)
-        addSensor(4, "NOISE", 35.0f, 55.0f);          // Ruido oficina (dB)
-    }
 
     public void addSensor(int id, String type, float minThreshold, float maxThreshold) {
-        Sensor sensor = new Sensor(id, type, minThreshold, maxThreshold);
-        CircularBuffer<SensorReading> buffer = new CircularBuffer<SensorReading>(MAX_READINGS_PER_SENSOR);
+    Sensor sensor = new Sensor(id, type, minThreshold, maxThreshold);
+    CircularBuffer<SensorReading> buffer = new CircularBuffer<>(MAX_READINGS_PER_SENSOR);
 
-        sensors.put(id, sensor);
-        sensorData.put(id, buffer);
+    sensors.put(id, sensor);
+    sensorData.put(id, buffer);
 
-        System.out.printf("➕ Sensor agregado: %s (Buffer: %d lecturas máx)%n",
-                type, MAX_READINGS_PER_SENSOR);
-    }
+    System.out.printf("➕ Sensor agregado: %s (Buffer: %d lecturas máx)%n",
+            type, MAX_READINGS_PER_SENSOR);
+}
+
+
+    private void setupDefaultSensors() {
+    System.out.println("🔧 Configurando sensores por defecto...");
+
+    // Sensores base (rango de referencia)
+    addSensor(1, "TEMPERATURE", 18.0f, 26.0f);
+    addSensor(2, "HUMIDITY", 40.0f, 60.0f);
+    addSensor(3, "CO2", 400.0f, 800.0f);
+    addSensor(4, "NOISE", 35.0f, 55.0f);
+
+    // 🔗 Vincular sensores a ThingSpeak (coloca tus IDs reales)
+    // Ejemplo: canal 2387465 y campos 1-4
+    sensors.get(1).configureThingSpeak(3149359, 1); // Temperatura
+    sensors.get(2).configureThingSpeak(3149359, 2); // Humedad
+    sensors.get(3).configureThingSpeak(3149359, 3); // CO2
+    sensors.get(4).configureThingSpeak(3149359, 4); // Ruido
+
+    System.out.println("✅ Sensores vinculados a ThingSpeak correctamente");
+}
+
 
     public void startDataCollection() {
         if (running) {
