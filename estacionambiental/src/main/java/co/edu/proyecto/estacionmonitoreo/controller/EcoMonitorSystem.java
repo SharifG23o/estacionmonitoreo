@@ -62,10 +62,10 @@ public class EcoMonitorSystem {
     System.out.println("🔧 Configurando sensores por defecto...");
 
     // Sensores base (rango de referencia)
-    addSensor(1, "TEMPERATURE", 18.0f, 26.0f);
-    addSensor(2, "HUMIDITY", 40.0f, 60.0f);
-    addSensor(3, "CO2", 400.0f, 800.0f);
-    addSensor(4, "NOISE", 35.0f, 55.0f);
+    addSensor(1, "TEMPERATURE", 0.0f, 100.0f);
+    addSensor(2, "HUMIDITY", 0.0f, 100.0f);
+    addSensor(3, "CO2", 0.0f, 1000.0f);
+    addSensor(4, "índice UV", 0.0f, 100.0f);
 
     // 🔗 Vincular sensores a ThingSpeak (coloca tus IDs reales)
     // Ejemplo: canal 2387465 y campos 1-4
