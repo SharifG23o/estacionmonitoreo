@@ -28,13 +28,8 @@ import java.util.*;
 import java.util.List;
 
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.draw.VerticalPositionMark;
-import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.*;
-import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;
-import com.lowagie.text.PageSize;
 import com.lowagie.text.Paragraph;
 
 
@@ -84,7 +79,6 @@ public class EcoMonitorGUI extends Application {
     private MemoryMXBean memoryBean;
     private OperatingSystemMXBean osBean;
     private ThreadMXBean threadBean;
-    private List<GarbageCollectorMXBean> gcBeans;
     private long lastGcCount = 0;
     
     // Estadísticas

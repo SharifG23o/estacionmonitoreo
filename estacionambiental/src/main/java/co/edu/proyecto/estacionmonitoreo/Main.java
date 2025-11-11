@@ -69,8 +69,8 @@ public class Main {
      */
     private static void printBanner() {
         System.out.println("╔════════════════════════════════════════════════════════════════════╗");
-        System.out.println("║           🌱 EcoMonitor - Sistema IoT de Monitoreo Ambiental      ║");
-        System.out.println("║                  Gestión Inteligente de Memoria                   ║");
+        System.out.println("            🌱 EcoMonitor - Sistema IoT de Monitoreo Ambiental       ");
+        System.out.println("                    Gestión Inteligente de Memoria                    ");
         System.out.println("╚════════════════════════════════════════════════════════════════════╝");
         System.out.println();
     }
