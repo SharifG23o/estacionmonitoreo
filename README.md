@@ -332,7 +332,7 @@ Las contribuciones son bienvenidas siguiendo estas pautas:
 
 Para consultas académicas, colaboraciones o soporte técnico:
 
-- 👨‍💻 **Autores:** Sharif Giraldo Obando y Juan Sebastián Hernández Guevara
+- 👨‍💻 **Autores:** Sharif Giraldo Obando
 - 🎓 **Programa:** Ingeniería de Sistemas y Computación
 - 🏫 **Universidad:** Universidad del Quindío – Armenia, Colombia
 - 📚 **Asignatura:** Fundamentos de Infraestructura Computacional
